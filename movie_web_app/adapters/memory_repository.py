@@ -24,6 +24,10 @@ class MemoryRepository(AbstractRepository):
     def add_movie(self, movie: Movie):
         insort_left(self.__movies, movie)
         self.__movie_index[movie.id] = movie
+        return movie.id
+
+    def get_number_of_movies(self):
+        return len(self.__movies)
 
     def get_movie(self, id_list):
         return [self.__movie_index[id] for id in id_list]
@@ -46,7 +50,7 @@ def load_users(data_path: str, repo: MemoryRepository):
 
 
 def read_csv_file(filename: str):
-    with open('movie_web_app/datafiles/users.csv', encoding='utf-8-sig') as infile:
+    with open('/Users/georgewang/Desktop/CS235-A2-main/movie_web_app/datafiles/users.csv', encoding='utf-8-sig') as infile:
         reader = csv.reader(infile)
 
         # Read first line of the the CSV file.

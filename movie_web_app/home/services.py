@@ -14,6 +14,9 @@ class UnknownUserException(Exception):
 class AuthenticationException(Exception):
     pass
 
+class NonExistentArticleException(Exception):
+    pass
+
 
 def add_user(username: str, password: str, repo: AbstractRepository):
     # Check that the given username is available.
