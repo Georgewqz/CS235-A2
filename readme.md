@@ -39,6 +39,19 @@ The *CS235-A2/.env* file contains variable settings. They are set with appropria
 * `WTF_CSRF_SECRET_KEY`: Secret key used by the WTForm library.
 
 
+## Testing
+
+Testing requires that file *CS235-A2/tests/conftest.py* be edited to set the value of `TEST_DATA_PATH`. You should set this to the absolute path of the *CS235-A2/tests/data* directory. 
+
+E.g. 
+
+`TEST_DATA_PATH = os.path.join('C:', os.sep, 'Users', 'georgewang', 'Documents', 'CS235-A2-main', 'tests', 'data')`
+
+assigns TEST_DATA_PATH with the following value (the use of os.path.join and os.sep ensures use of the correct platform path separator):
+
+
+
+You can then run tests from within PyCharm.
 
 
  
